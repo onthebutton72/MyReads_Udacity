@@ -7,3 +7,5 @@ class myComponent extends React.Component {
 		)
 	}
 }
+
+export default myComponent

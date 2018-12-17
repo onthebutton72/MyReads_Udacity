@@ -1,9 +1,11 @@
 import React from 'react'
 
-class myComponent extends React.Component {
+class Search extends React.Component {
 	render() {
 		return(
 			<h2></h2>
 		)
 	}
 }
+
+export default Search

@@ -8,21 +8,17 @@ import Search from './Search'
 class BooksApp extends React.Component {
 
   state = {books: []}
-
-  loadPage = () => {
+  
+  componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
     });
   }
-  
-  componentDidMount() {
-    this.loadPage();
-  }
 
-  changeShelf = (book, val) => {
-    book.shelf = val;
+  moveShelf = (book, value) => {
+    book.shelf = value;
     BooksAPI.update(book, book.shelf).then((data) => {
-      let result = this.state.books.filter((filtered) => filtered.id !== book.id)
+      let result = this.state.books.filter((newBook) => newBook.id !== book.id)
       this.setState({ books: result.concat([book]) })
     });
   }
@@ -33,12 +29,12 @@ class BooksApp extends React.Component {
       <Route path="/" exact render={() => (
         <Home 
           books={this.state.books}
-          changeShelf={this.changeShelf}
+          moveShelf={this.moveShelf}
         />
       )}/>
         <Route path="/search" render={() => (
         <Search 
-          changeShelf={this.changeShelf}
+          moveShelf={this.moveShelf}
           books={this.state.books}
         />
       )}/>

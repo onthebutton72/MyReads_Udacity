@@ -22,8 +22,11 @@ A new browser window will appear, if it doesn't you may navigate to [http://loca
 ## Usage
 
 - Books are sorted into three categories: 
+    
     Currently Reading
+    
     Want to Read
+    
     Read
 
 - To move a book click the drop down menu on the book icons and choose the shelf you wish to move the book.
